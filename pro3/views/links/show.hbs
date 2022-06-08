@@ -1,0 +1,30 @@
+<script>
+    function copyLink() { let copyText = document.getElementById("link1"); var
+    selection = window.getSelection(); var range = document.createRange();
+    range.selectNodeContents(copyText); selection.removeAllRanges();
+    selection.addRange(range); document.execCommand('copy'); }
+</script>
+
+<div class="row">
+    <div class="input-field">
+        <a
+            href="{{randStr}}"
+            id="link1"
+            target="_blank"
+            style="font-size: 20px;"
+        >
+            {{randStr}}</a>
+    </div>
+    <div class="input-field">
+        <input
+            type="button"
+            class="btn btn-primary"
+            onclick="copyLink()"
+            data-toggle="tooltip"
+            title="Copy to Clipboard"
+            value="copy link"
+            readonly
+        />
+        <a href="../links/add" class="btn btn-primary">Go back</a>
+    </div>
+</div>

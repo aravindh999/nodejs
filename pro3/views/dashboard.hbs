@@ -1,0 +1,26 @@
+<h1>Dashboard</h1>
+<h3>Welcome {{name}}</h3>
+{{#if links}}
+    <table class="stripped">
+        <thead>
+            <tr>
+                <th>Original URL</th>
+                <th>Redirect URL</th>
+                <th>Time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each links}}
+                <tr>
+                    <td><a href="/links/{{_id}}"></a>{{redirectLink}}</td>
+                    <td>https://linkshrtnr.herokuapp.com/{{redirectString}}</td> 
+                    <td>{{createdAt}}</a></td>
+                    <td></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You don't have any links!</p>
+{{/if}}
